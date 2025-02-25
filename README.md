@@ -78,7 +78,7 @@ DB_DATABASE=todoapp
 ### Start the server
 
 ```sh
-npm start
+npm run start:dev
 ```
 
 ## API Endpoints
