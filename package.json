@@ -9,6 +9,6 @@
     "nodemon": "^3.1.9"
   },
   "scripts": {
-    "start:dev": "nodemon index.js"
+    "start:dev": "nodemon server.js"
   }
 }
