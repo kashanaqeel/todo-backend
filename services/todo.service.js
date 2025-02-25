@@ -29,6 +29,19 @@ class TodoService {
         return updateTodo.rows[0];
     }
 
+    async markAsCompleted(id, status) {
+        if (!status) {
+            throw new Error("Status is required");
+        }
+
+        const updateTodo = await pool.query(
+            "UPDATE todo SET status = $1 WHERE id = $2 RETURNING *",
+            [status, id]
+        );
+
+        return updateTodo.rowCount > 0 ? updateTodo.rows[0] : null;
+    }
+
     async deleteTodo(id) {
         const deleteTodo = await pool.query(
             "DELETE FROM todo WHERE id = $1 RETURNING *",
