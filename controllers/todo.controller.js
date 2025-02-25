@@ -28,11 +28,11 @@ class TodoController {
     updateTodo = async (req, res) => {
         try {
             const { id } = req.params;
-            const { title, description: desc, status } = req.body;
+            const { title, description: description, status } = req.body;
 
             const todoData = {
                 title,
-                description: desc,
+                description: description,
                 status
             };
 
